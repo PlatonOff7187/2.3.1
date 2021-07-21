@@ -8,6 +8,6 @@ public interface UserDao {
     public List<User> index();
     public User show(int id);
     public void save(User user);
-    public User update(int id, User updateUser);
+    public User update(User updateUser);
     public void delete(int id);
 }

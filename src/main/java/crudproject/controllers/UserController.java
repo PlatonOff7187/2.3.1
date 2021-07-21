@@ -52,12 +52,12 @@ public class UserController {
     }
     @PatchMapping("/{id}")
     public String update(@ModelAttribute("user") User user,
-                         BindingResult bindingResult ,@PathVariable("id") int id) throws SQLException {
+                         BindingResult bindingResult) throws SQLException {
         if(bindingResult.hasErrors()) {
             return "users/edit";
         }
 
-        userService.update(id, user);
+        userService.update(user);
         return "redirect:/users";
     }
     @DeleteMapping("/{id}")
